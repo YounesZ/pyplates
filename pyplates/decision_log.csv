@@ -1,0 +1,28 @@
+--- PIPELINES
+Methods
+    -   predict:    manages epochs structure
+                    input type must always be a [NP.NDARRAY] or List[NP.NDARRAY]
+                    output type is List[NP.NDARRAY]
+
+
+--- BLOCKS
+default
+    -   input:      dataframe or list of dataframes
+    -   output:     dataframe or list of dataframes
+    -   optin:
+
+XYblock
+    -   input:      list of dataframes, list of np.arrays
+    -   output:     list of np.arrays
+                    if input is single series or dataframes, tries to reshape as lit
+
+SeriesToTableBlock
+    -   input:      list of dataframes
+    -   output:     list of np.arrays (3D)
+
+
+--- MODELS
+Methods
+    -   predict:    not aware of epochs structure
+                    input must always be a [NP.NDARRAY] object
+                    output tyrpe is NP.NDARRAY

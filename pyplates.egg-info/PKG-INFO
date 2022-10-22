@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: pyplates
+Version: 0.1.0
+Summary: Python templates for building data science pipelines
+Home-page: https://github.com/YounesZ/pyplates
+Author: Younes Zerouali
+Author-email: younes_zerouali@hotmail.com
+License: BSD 2-clause
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Initializations launch
+Classifier: Intended Audience :: Private Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: >=3.8
