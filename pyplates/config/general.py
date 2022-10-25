@@ -35,7 +35,7 @@ TRAINING_EPOCHS = 1
 
 # --- TRACKING
 LOCAL_MODEL_STORE = '/Users/younes/Documents/Perso/Models/pipeline_backups'
-MLFLOW_TRACKER_URI = 'localhost:5005'
+MLFLOW_TRACKER_URI = 'http://mlflow.carsnatch.ai'
 MLFLOW_EXPERIMENT_NAME = 'mlcars'
 MLFLOW_EXCLUDE_PARAMS = ['X_TRAIN', 'X_TEST', 'Y_TRAIN', 'Y_TEST', 'FEATURES_COLUMNS', 'all_features', 'FEATURES_ENCODING_DICT']
 
