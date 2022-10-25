@@ -1,2 +1,10 @@
 pandas
 numpy
+sklearn
+pickle5
+matplotlib
+datetime
+mlflow
+lightgbm
+catboost
+xgboost

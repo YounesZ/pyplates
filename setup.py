@@ -10,7 +10,15 @@ setup(
     license='BSD 2-clause',
     packages=['pyplates'],
     install_requires=['pandas',
-                      'numpy'],
+                      'numpy',
+                      'sklearn',
+                      'pickle5',
+                      'matplotlib',
+                      'datetime',
+                      'mlflow',
+                      'lightgbm',
+                      'catboost',
+                      'xgboost'],
 
     classifiers=[
         'Development Status :: 1 - Initializations launch',

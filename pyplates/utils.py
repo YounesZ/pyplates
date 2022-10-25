@@ -1,8 +1,8 @@
 import mlflow
-from pyplates.config import MLFLOW_EXCLUDE_PARAMS
+from pyplates.config.general import MLFLOW_EXCLUDE_PARAMS
 
 def get_mlflow_experiment_id(experiment_name):
-    elist = mlflow.list_experiments()
+    elist = mlflow.search_experiments()
     eid = [i_.experiment_id for i_ in elist if i_.name == experiment_name]
     if len(eid) > 0:
         eid = eid[0]

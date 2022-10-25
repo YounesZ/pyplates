@@ -11,18 +11,17 @@ from mlflow import set_tracking_uri, \
                    log_metric, \
                    log_param
 from inspect import getmembers, isroutine, getargspec
-from src.utils import serialize_criteria
 from sklearn.base import TransformerMixin, RegressorMixin
 from mlflow.pyfunc import log_model, PythonModel
 from pyplates.utils import get_mlflow_experiment_id, mlflow_log_params
 from sklearn.metrics import mean_absolute_error
-from pyplates.config import HYPERPARAM_RANGE_TYPE, RANDOM_SEED, DF_DATA_SEPARATOR, \
-                            DF_DATA_DECIMAL, DF_LABEL_SEPARATOR, DF_LABEL_DECIMAL, \
-                            MLFLOW_TRACKER_URI, MLFLOW_EXPERIMENT_NAME, LOCAL_MODEL_STORE,\
-                            REQUIRED_LOCAL_VARIABLES
-from config.localvars import PATH_TO_CODE
+from pyplates.config.general import HYPERPARAM_RANGE_TYPE, RANDOM_SEED, DF_DATA_SEPARATOR, \
+                                    DF_DATA_DECIMAL, DF_LABEL_SEPARATOR, DF_LABEL_DECIMAL, \
+                                    MLFLOW_TRACKER_URI, MLFLOW_EXPERIMENT_NAME, LOCAL_MODEL_STORE,\
+                                    REQUIRED_LOCAL_VARIABLES
 from pytox.utils.data_loaders import load_datafile
-from pytox.utils.data_structures import check_input, convert_input
+from pyplates.config.localvars import PATH_TO_CODE
+from pytox.utils.data_structures import check_input, convert_input, serialize_dictionary
 from pytox.utils.signal_processing import ts_custom_split, get_sample_variables
 
 import logging
@@ -385,7 +384,7 @@ class PipelineBlock(RegressorMixin, Block):
 
         # Gen pipeline name
         dtm = datetime.datetime.now()
-        suffix = serialize_criteria(params['FILTER_CRITERIA'])
+        suffix = serialize_dictionary(params['FILTER_CRITERIA'])
         pipe_name = 'pipeline_%s_%i%i%i-%i%i%i_%s' % \
                     (self.pipeline_type, dtm.day, dtm.month, dtm.year, dtm.hour, dtm.minute, dtm.second, suffix)
         full_path = path.join(save_path, pipe_name)
