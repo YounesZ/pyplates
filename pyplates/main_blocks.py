@@ -414,7 +414,6 @@ class PipelineBlock(RegressorMixin, Block):
         environ["MLFLOW_TRACKING_USERNAME"] = "youbuntu"
         environ["MLFLOW_TRACKING_PASSWORD"] = "Dr!ss0un0urs"
 
-        """
         import pandas as pd
         from sklearn import datasets
         from sklearn.ensemble import RandomForestClassifier
@@ -427,7 +426,7 @@ class PipelineBlock(RegressorMixin, Block):
         clf = RandomForestClassifier(max_depth=7, random_state=0)
         clf.fit(iris_train, iris.target)
         signature = infer_signature(iris_train, clf.predict(iris_train))
-        mlflow.sklearn.log_model(clf, "dumbest model ever3", signature=signature)
+        mlflow.sklearn.log_model(clf, "dumbest model ever4", signature=signature)
         """
         log_model(
             artifact_path=pipe_name,
@@ -435,6 +434,8 @@ class PipelineBlock(RegressorMixin, Block):
             code_path=[PATH_TO_CODE],
             artifacts={"pipeline_full_path": full_path},
         )
+        """
+
 
         return full_path
 

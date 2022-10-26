@@ -1,5 +1,5 @@
 import mlflow
-from config.general import MLFLOW_EXCLUDE_PARAMS
+from pyplates.config.general import MLFLOW_EXCLUDE_PARAMS
 
 def get_mlflow_experiment_id(experiment_name):
     elist = mlflow.search_experiments()
